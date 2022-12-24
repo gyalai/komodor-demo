@@ -8,7 +8,7 @@ metadata:
   annotations:
     app.komodor.com/app: https://github.com/vfarcic/komodor-demo-2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: silly-demo
