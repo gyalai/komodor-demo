@@ -8,12 +8,15 @@ metadata:
     app.kubernetes.io/name: silly-demo
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
+    alb.ingress.kubernetes.io/scheme: internet-facing                                                                                                                                                                                                         │
+│   alb.ingress.kubernetes.io/target-type: ip
 spec:
+  ingressClassName: alb
   rules:
   - http:
       paths:
       - path: /
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
             name: silly-demo
